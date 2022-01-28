@@ -44,15 +44,29 @@ public class Spaceship : MonoBehaviour
         foreach (Alien alien in _aliens)
         {
             /*Debug.Log((int)transform.position.x + " alieni: " + (int)alien.transform.position.x);*/
-
-            if (alien!=null || (int)transform.position.x == (int)alien.transform.position.x)
+            /*for (int i = -11; i<8; i++)
             {
-                /*alien.GetComponent<SpriteRenderer>().color = Color.red;*/
-                if (Input.GetMouseButtonUp(0))
+                if((int)transform.position.x == i && (int)alien.transform.position.x == i)
+                {
+                    alien.GetComponent<SpriteRenderer>().color = Color.red;
+                }
+                else
+                {
+                    alien.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+            }*/
+            if (alien!=null && (int)transform.position.x == (int)alien.transform.position.x)
+            {
+                alien.GetComponent<SpriteRenderer>().color = Color.red;
+                if (Input.GetMouseButtonDown(1))
                 {
                     alien.AbductAlien();
                     break;
                 }
+            }
+            if (alien != null && (int)transform.position.x != (int)alien.transform.position.x)
+            {
+                alien.GetComponent<SpriteRenderer>().color = Color.white;
             }
             /*alien.GetComponent<SpriteRenderer>().color = Color.white;*/
         }

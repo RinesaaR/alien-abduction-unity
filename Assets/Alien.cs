@@ -24,7 +24,7 @@ public class Alien : MonoBehaviour
         force = new Vector3(0, 100, 0);
 
         rb.AddForce(force);*/
-        
+
     }
 
     // Update is called once per frame
