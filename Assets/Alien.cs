@@ -24,13 +24,17 @@ public class Alien : MonoBehaviour
         force = new Vector3(0, 100, 0);
 
         rb.AddForce(force);*/
+        /*AbductAlien();*/
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+/*       if(CheckAlien())
+        {
+            AbductAlien();
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,20 +54,23 @@ public class Alien : MonoBehaviour
         rb.AddForce(force);
     }
 
-    public void CheckAlien()
+/*    public bool CheckAlien()
     {
-/*        foreach (Spaceship spaceship in _spaceships)
+        foreach (Spaceship spaceship in _spaceships)
         {
-            if (spaceship !=null || (int)spaceship.transform.position.x == (int)transform.position.x)
+            if (spaceship != null && (int)spaceship.transform.position.x == (int)transform.position.x)
             {
                 GetComponent<SpriteRenderer>().color = Color.red;
+                return true;
             }
             else
             {
                 GetComponent<SpriteRenderer>().color = Color.white;
+                return false;
             }
-        }*/
-    }
+        }
+        return false;
+    }*/
 
 
 }

@@ -10,6 +10,9 @@ public class Spaceship : MonoBehaviour
     private Vector3 _initialPosition;
     private float PlayerSpeed = 5;
     private Alien[] _aliens;
+    private Alien chosenAlien = null;
+    private Rigidbody2D rb;
+    [SerializeField] Vector3 force;
     private void Awake()
     {
         _initialPosition = transform.position;
@@ -21,7 +24,7 @@ public class Spaceship : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log("ALIENAT   " +_aliens.Length);
+        Debug.Log("ALIENAT   " + _aliens.Length);
     }
     private void Update()
     {
@@ -30,58 +33,59 @@ public class Spaceship : MonoBehaviour
 
         GetComponent<LineRenderer>().SetPosition(1, _initialPosition);
         GetComponent<LineRenderer>().SetPosition(0, transform.position);
+
     }
 
     private void OnMouseDrag()
     {
-        
+
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y);
 
         Vector2 directionToInitialPosition = transform.position;
         /* _spaceshipWasLaunched = true;*/
-        
+
         foreach (Alien alien in _aliens)
         {
-            /*Debug.Log((int)transform.position.x + " alieni: " + (int)alien.transform.position.x);*/
-            /*for (int i = -11; i<8; i++)
+            if (alien != null && (int)transform.position.x == (int)alien.transform.position.x)
             {
-                if((int)transform.position.x == i && (int)alien.transform.position.x == i)
-                {
-                    alien.GetComponent<SpriteRenderer>().color = Color.red;
-                }
-                else
-                {
-                    alien.GetComponent<SpriteRenderer>().color = Color.white;
-                }
-            }*/
-            if (alien!=null && (int)transform.position.x == (int)alien.transform.position.x)
-            {
-                alien.GetComponent<SpriteRenderer>().color = Color.red;
-                if (Input.GetMouseButtonDown(1))
-                {
-                    alien.AbductAlien();
-                    break;
-                }
+                alien.GetComponent<SpriteRenderer>().color = Color.blue;
+                Debug.Log("ALIENI I ZGJEDHUR12345678: " + alien);
+                chosenAlien = alien;
             }
             if (alien != null && (int)transform.position.x != (int)alien.transform.position.x)
             {
                 alien.GetComponent<SpriteRenderer>().color = Color.white;
             }
-            /*alien.GetComponent<SpriteRenderer>().color = Color.white;*/
         }
     }
-/*    private void OnMouseUp()
+    private void OnMouseUp()
     {
-        Destroy(this.gameObject);
-    }*/
+        Debug.Log("ALIENI I ZGJEDHUR: " + chosenAlien);
+        if (chosenAlien != null)
+        {
+            /*chosenAlien.AbductAlien();*/
+            /*rb = chosenAlien.GetComponent<Rigidbody2D>();
+
+            force = new Vector3(0, 100, 0);
+
+            rb.AddForce(force);*/
+
+            float step = 1.5f * Time.deltaTime;
+            chosenAlien.transform.position = Vector3.MoveTowards(transform.position, this.transform.position, step);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "topBoundaryOutside")
         {
             Destroy(this.gameObject);
         }
-    }
 
+        if (collision.gameObject.tag == "spaceshipBoundary")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
 }
