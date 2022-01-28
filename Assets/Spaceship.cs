@@ -87,6 +87,14 @@ public class Spaceship : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         Destroy(chosenAlien.gameObject);
+
+
+        rb = this.GetComponent<Rigidbody2D>();
+
+        force = new Vector3(0, 200, 0);
+
+        rb.AddForce(force); 
+
     }
 
 
