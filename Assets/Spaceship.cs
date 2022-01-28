@@ -71,10 +71,25 @@ public class Spaceship : MonoBehaviour
 
             rb.AddForce(force);*/
 
-            float step = 0.01f * Time.deltaTime;
+            float step = 0.001f * Time.deltaTime;
             chosenAlien.transform.position = Vector3.MoveTowards(transform.position, this.transform.position, step);
+            chosenAlien.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            chosenAlien.gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
+
+
+            StartCoroutine(DestroyAlien());
+
         }
+
     }
+
+    public IEnumerator DestroyAlien()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(chosenAlien.gameObject);
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "topBoundaryOutside")

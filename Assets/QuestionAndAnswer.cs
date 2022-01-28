@@ -26,7 +26,7 @@ public class QuestionAndAnswer : MonoBehaviour
         for (int i = 0; i < alienNum; i++)
         {
             Text answerClone = Instantiate(answer, new Vector3(2 * i, answer.transform.position.y, 0), answer.transform.rotation);
-            answerClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
+            answerClone.transform.localScale = new Vector3(0.005f, 0.005f, 0.005f);
             answerClone.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
             answerClone.text = "Hello" + i;
         }
@@ -37,7 +37,7 @@ public class QuestionAndAnswer : MonoBehaviour
         for (int i = 0; i < alienNum; i++)
         {
             Text questionClone = Instantiate(question, new Vector3(2 * i, question.transform.position.y, 0), question.transform.rotation);
-            questionClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
+            questionClone.transform.localScale = new Vector3(0.005f, 0.005f, 0.005f);
             questionClone.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
             questionClone.text = "HelloPyetje" + i;
         }

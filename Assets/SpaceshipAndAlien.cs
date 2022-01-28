@@ -50,8 +50,16 @@ public class SpaceshipAndAlien : MonoBehaviour
         {
             GameObject alienClone = Instantiate(alien, new Vector3(2.5f * i, alien.transform.position.y, 0), alien.transform.rotation);
             alienClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
- 
-   
+            Text answer = Component.FindObjectOfType<Text>();
+            answer.text = "Bye " + i;
+            //Text Answer = alienClone.transform.GetChild(0).gameObject ;
+            //Answer.text = "Hello " + i;
+
+            //Text Answer = GameObject.FindGameObjectWithTag("Answer").GetComponent<Text>();
+            //Answer.text = gameObject.GetComponent<Text>().text;
+            //Answer.text = "Hello " + i;
+
+
         }
     }
     private void MultiplySpaceships(int alienNum)
@@ -60,6 +68,8 @@ public class SpaceshipAndAlien : MonoBehaviour
         {
             GameObject spaceshipClone = Instantiate(spaceship, new Vector3(4 * i, spaceship.transform.position.y*Random.Range(1,1.5f), 0), spaceship.transform.rotation);
             spaceshipClone.transform.localScale = new Vector3(1f, 1.1f, 1.5f);
+            Text question = Component.FindObjectOfType<Text>();
+            question.text = "Hello " + i;
             /*GameObject answerClone = Instantiate(answer, new Vector3(5 * i, alien.transform.position.y, 0), answer.transform.rotation);*/
         }
     }
