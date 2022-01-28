@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SpaceshipAndAlien : MonoBehaviour
 {
+    //public GameObject[] alien = new GameObject [2];
     public GameObject alien;
     /*public Text answer;*/
     public GameObject spaceship;
@@ -25,20 +26,34 @@ public class SpaceshipAndAlien : MonoBehaviour
     {
         
     }
+    //private void MultiplyAliens(int alienNum)
+    //{
+    //    for (int i = 0; i < alienNum; i++)
+    //    {
+    //        GameObject [] alienClone = new GameObject[2];
+    //        alienClone[0] = Instantiate(alien[0], new Vector3(2.5f*i, alien[0].transform.position.y, 0), alien[0].transform.rotation);
+    //        alienClone[1] = Instantiate(alien[1], new Vector3(2.5f * i, alien[1].transform.position.y, 0), alien[1].transform.rotation);
+    //        alienClone[0].transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
+    //        alienClone[1].transform.localScale = new Vector3(0.005f, 0.005f, 0.005f);
+
+    //        /*Text answerClone = Instantiate(answer, new Vector3(2 * i, answer.transform.position.y, 0), answer.transform.rotation);
+    //        answerClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
+    //        answerClone.text = "Hello" + i;*/
+    //        /*alienClone.GetComponent<Text>().text = "Hello"+i;*/
+    //        /*GameObject answerClone = Instantiate(answer, new Vector3(5 * i, alien.transform.position.y, 0), answer.transform.rotation);*/
+    //    }
+    //}
+
     private void MultiplyAliens(int alienNum)
     {
         for (int i = 0; i < alienNum; i++)
         {
-            GameObject alienClone = Instantiate(alien, new Vector3(2.5f*i, alien.transform.position.y, 0), alien.transform.rotation);
+            GameObject alienClone = Instantiate(alien, new Vector3(2.5f * i, alien.transform.position.y, 0), alien.transform.rotation);
             alienClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
-            /*Text answerClone = Instantiate(answer, new Vector3(2 * i, answer.transform.position.y, 0), answer.transform.rotation);
-            answerClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
-            answerClone.text = "Hello" + i;*/
-            /*alienClone.GetComponent<Text>().text = "Hello"+i;*/
-            /*GameObject answerClone = Instantiate(answer, new Vector3(5 * i, alien.transform.position.y, 0), answer.transform.rotation);*/
+ 
+   
         }
     }
-
     private void MultiplySpaceships(int alienNum)
     {
         for (int i = 0; i < alienNum; i++)

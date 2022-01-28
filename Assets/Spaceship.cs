@@ -71,18 +71,13 @@ public class Spaceship : MonoBehaviour
 
             rb.AddForce(force);*/
 
-            float step = 1.5f * Time.deltaTime;
+            float step = 0.01f * Time.deltaTime;
             chosenAlien.transform.position = Vector3.MoveTowards(transform.position, this.transform.position, step);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "topBoundaryOutside")
-        {
-            Destroy(this.gameObject);
-        }
-
-        if (collision.gameObject.tag == "spaceshipBoundary")
         {
             Destroy(this.gameObject);
         }
