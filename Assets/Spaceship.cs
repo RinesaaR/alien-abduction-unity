@@ -62,18 +62,15 @@ public class Spaceship : MonoBehaviour
     private void OnMouseUp()
     {
         Debug.Log("ALIENI I ZGJEDHUR: " + chosenAlien);
+        if (chosenAlien.GetComponent<SpriteRenderer>().color == Color.white)
+        {
+            chosenAlien = null;
+        }
         if (chosenAlien != null)
         {
-            /*chosenAlien.AbductAlien();*/
-            /*rb = chosenAlien.GetComponent<Rigidbody2D>();
-
-            force = new Vector3(0, 100, 0);
-
-            rb.AddForce(force);*/
-
-            float step = 0.001f * Time.deltaTime;
+            float step = 0.001f * Time.deltaTime; 
             chosenAlien.transform.position = Vector3.MoveTowards(transform.position, this.transform.position, step);
-            chosenAlien.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            chosenAlien.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
             chosenAlien.gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
 
 
@@ -88,12 +85,8 @@ public class Spaceship : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Destroy(chosenAlien.gameObject);
 
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 3.0f);
 
-        rb = this.GetComponent<Rigidbody2D>();
-
-        force = new Vector3(0, 200, 0);
-
-        rb.AddForce(force); 
 
     }
 
