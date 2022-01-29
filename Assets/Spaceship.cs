@@ -38,11 +38,13 @@ public class Spaceship : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        //SpriteRenderer.color = new Color(1f, 1f, 1f, .5f);4
 
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y);
 
         Vector2 directionToInitialPosition = transform.position;
+        this.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 1);
         /* _spaceshipWasLaunched = true;*/
 
         foreach (Alien alien in _aliens)
@@ -64,6 +66,8 @@ public class Spaceship : MonoBehaviour
         Debug.Log("ALIENI I ZGJEDHUR: " + chosenAlien);
         if (chosenAlien.GetComponent<SpriteRenderer>().color == Color.white)
         {
+
+            this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
             chosenAlien = null;
         }
         if (chosenAlien != null)
@@ -96,6 +100,7 @@ public class Spaceship : MonoBehaviour
         if (collision.gameObject.tag == "topBoundaryOutside")
         {
             Destroy(this.gameObject);
+            ScoreQuestion.Instance.AddScore(1);
         }
     }
 
