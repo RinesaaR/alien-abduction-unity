@@ -218,6 +218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bbd32b7c46f0c41b6820043aaec27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialPosition: {x: 0, y: 0, z: 0}
+  PlayerSpeed: 5
+  _aliens: []
+  chosenAlien: {fileID: 0}
+  rb: {fileID: 0}
   force: {x: 0, y: 0, z: 0}
 --- !u!120 &67973004
 LineRenderer:
@@ -455,6 +460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!212 &149419765
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -727,6 +734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bbd32b7c46f0c41b6820043aaec27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialPosition: {x: 0, y: 0, z: 0}
+  PlayerSpeed: 5
+  _aliens: []
+  chosenAlien: {fileID: 0}
+  rb: {fileID: 0}
   force: {x: 0, y: 0, z: 0}
 --- !u!120 &164742674
 LineRenderer:
@@ -1118,6 +1130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!50 &505191707
 Rigidbody2D:
   serializedVersion: 4
@@ -1152,6 +1166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!60 &729226254
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1654,6 +1672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!50 &799344702
 Rigidbody2D:
   serializedVersion: 4
@@ -1902,9 +1922,9 @@ GameObject:
   - component: {fileID: 872957947}
   - component: {fileID: 872957946}
   - component: {fileID: 872957945}
-  - component: {fileID: 872957944}
   - component: {fileID: 872957943}
   - component: {fileID: 872957942}
+  - component: {fileID: 872957944}
   m_Layer: 0
   m_Name: alien
   m_TagString: Untagged
@@ -1960,7 +1980,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 872957941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a61be5caf510b4cbc566b232199ff1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2894273b9e60f4cad20904b9f1e2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
@@ -2155,6 +2175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bbd32b7c46f0c41b6820043aaec27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialPosition: {x: 0, y: 0, z: 0}
+  PlayerSpeed: 5
+  _aliens: []
+  chosenAlien: {fileID: 0}
+  rb: {fileID: 0}
   force: {x: 0, y: 0, z: 0}
 --- !u!114 &908357980
 MonoBehaviour:
@@ -2531,6 +2556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!61 &1135170769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2626,6 +2653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!212 &1159136224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2736,10 +2765,10 @@ GameObject:
   - component: {fileID: 1160416525}
   - component: {fileID: 1160416524}
   - component: {fileID: 1160416523}
-  - component: {fileID: 1160416522}
   - component: {fileID: 1160416521}
   - component: {fileID: 1160416520}
   - component: {fileID: 1160416519}
+  - component: {fileID: 1160416522}
   m_Layer: 5
   m_Name: Question
   m_TagString: Untagged
@@ -2945,7 +2974,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1160416517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bbd32b7c46f0c41b6820043aaec27e, type: 3}
+  m_Script: {fileID: 11500000, guid: e47831c7bd6b66945b65e2b3d72cea5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
@@ -3032,9 +3061,9 @@ GameObject:
   - component: {fileID: 1196329068}
   - component: {fileID: 1196329072}
   - component: {fileID: 1196329071}
-  - component: {fileID: 1196329070}
   - component: {fileID: 1196329069}
   - component: {fileID: 1196329073}
+  - component: {fileID: 1196329070}
   m_Layer: 0
   m_Name: spaceship
   m_TagString: Untagged
@@ -3164,7 +3193,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196329067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bbd32b7c46f0c41b6820043aaec27e, type: 3}
+  m_Script: {fileID: 11500000, guid: e47831c7bd6b66945b65e2b3d72cea5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
@@ -3443,9 +3472,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1495075212}
-  - component: {fileID: 1495075213}
   - component: {fileID: 1495075214}
   - component: {fileID: 1495075215}
+  - component: {fileID: 1495075213}
   m_Layer: 0
   m_Name: QuestionThing
   m_TagString: Untagged
@@ -3477,7 +3506,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1495075211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bbd32b7c46f0c41b6820043aaec27e, type: 3}
+  m_Script: {fileID: 11500000, guid: e47831c7bd6b66945b65e2b3d72cea5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
@@ -3923,10 +3952,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1502931192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7decf134233fe4468fe3d0d957d2b5c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f4fa7f3a8de2b48801fd7d19e05e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 10
+  timeValue: 90
   timerText: {fileID: 1502931198}
   timeUp: {fileID: 2032304360}
 --- !u!1 &1574165344
@@ -4064,10 +4093,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1869436316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd305558d6333f14e9847442a855c75a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f2088b8724909e4fa6a94763249ccf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alien: {fileID: 799344699}
+  alien: {fileID: 872957941}
   spaceship: {fileID: 1495075211}
 --- !u!1 &1914887184
 GameObject:
@@ -4079,11 +4108,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1914887188}
   - component: {fileID: 1914887187}
+  - component: {fileID: 1914887189}
   - component: {fileID: 1914887186}
   - component: {fileID: 1914887185}
   - component: {fileID: 1914887191}
   - component: {fileID: 1914887190}
-  - component: {fileID: 1914887189}
   m_Layer: 5
   m_Name: Spaceship
   m_TagString: Untagged
@@ -4187,7 +4216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914887184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bbd32b7c46f0c41b6820043aaec27e, type: 3}
+  m_Script: {fileID: 11500000, guid: e47831c7bd6b66945b65e2b3d72cea5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
@@ -4680,6 +4709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
+  rb: {fileID: 0}
+  _spaceships: []
 --- !u!212 &1976769081
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5181,7 +5212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1984385108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50895daff1dc87c46ac73c726c1990f1, type: 3}
+  m_Script: {fileID: 11500000, guid: f94f25a51a9a9e045b887379ac000b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2032304353
@@ -5235,10 +5266,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032304353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7decf134233fe4468fe3d0d957d2b5c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f4fa7f3a8de2b48801fd7d19e05e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 10
+  timeValue: 90
   timerText: {fileID: 1502931198}
   timeUp: {fileID: 2032304360}
 --- !u!223 &2032304356
