@@ -13,6 +13,10 @@ public class Spaceship : MonoBehaviour
     private Alien chosenAlien = null;
     private Rigidbody2D rb;
     [SerializeField] Vector3 force;
+    /*private float translation;
+    private readonly float LeftlimitScreen = -10.23f;
+    private readonly float RightlimitScreen = 7.53f;
+    private float movementSpeed = 2;*/
     private void Awake()
     {
         _initialPosition = transform.position;
@@ -20,11 +24,11 @@ public class Spaceship : MonoBehaviour
 
     private void OnEnable()
     {
-        _aliens = FindObjectsOfType<Alien>();
+        
     }
     private void Start()
     {
-        Debug.Log("ALIENAT   " + _aliens.Length);
+        _aliens = FindObjectsOfType<Alien>();
     }
     private void Update()
     {
@@ -33,6 +37,23 @@ public class Spaceship : MonoBehaviour
 
         GetComponent<LineRenderer>().SetPosition(1, _initialPosition);
         GetComponent<LineRenderer>().SetPosition(0, transform.position);
+
+        /*Vector3 position = this.transform.position;
+        translation = Input.acceleration.x * movementSpeed * 50f;
+
+        if (this.transform.position.x + translation < LeftlimitScreen)
+        {
+            position.x = -LeftlimitScreen;
+        }
+        else if (transform.position.x + translation > RightlimitScreen)
+        {
+            position.x = RightlimitScreen;
+        }
+        else
+        {
+            position.x += translation;
+            this.transform.position = position;
+        }*/
 
     }
 
@@ -46,9 +67,10 @@ public class Spaceship : MonoBehaviour
         Vector2 directionToInitialPosition = transform.position;
         this.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 1);
         /* _spaceshipWasLaunched = true;*/
-
+        Debug.Log("ALIENAT   " + _aliens.Length);
         foreach (Alien alien in _aliens)
         {
+            Debug.Log("hello"+alien);
             if (alien != null && (int)transform.position.x == (int)alien.transform.position.x)
             {
                 alien.GetComponent<SpriteRenderer>().color = Color.blue;
@@ -63,8 +85,9 @@ public class Spaceship : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         Debug.Log("ALIENI I ZGJEDHUR: " + chosenAlien);
-        if (chosenAlien.GetComponent<SpriteRenderer>().color == Color.white)
+        if (chosenAlien !=null && chosenAlien.GetComponent<SpriteRenderer>().color == Color.white)
         {
 
             this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
@@ -101,6 +124,10 @@ public class Spaceship : MonoBehaviour
         {
             Destroy(this.gameObject);
             ScoreQuestion.Instance.AddScore(1);
+        }
+        if(collision.gameObject.tag == "leftBoundary")
+        {
+            this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 

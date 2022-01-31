@@ -8,6 +8,8 @@ TagManager:
   - topBoundaryOutside
   - spaceshipBoundary
   - Answer
+  - leftBoundary
+  - rightBoundary
   layers:
   - Default
   - TransparentFX
