@@ -237,12 +237,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 755695840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7decf134233fe4468fe3d0d957d2b5c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f4fa7f3a8de2b48801fd7d19e05e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 10
+  timeValue: 90
   timerText: {fileID: 755695846}
-  timeUp: {fileID: 0}
+  timeUp: {fileID: 1779313542}
+  answer: {fileID: 2100749281}
+  spaceships: []
 --- !u!223 &755695842
 Canvas:
   m_ObjectHideFlags: 0
@@ -519,7 +521,6 @@ GameObject:
   - component: {fileID: 1165780855}
   - component: {fileID: 1165780854}
   - component: {fileID: 1165780853}
-  - component: {fileID: 1165780852}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Answer
@@ -527,21 +528,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1165780852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165780851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7decf134233fe4468fe3d0d957d2b5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeValue: 20
-  timerText: {fileID: 755695846}
-  timeUp: {fileID: 1779313542}
 --- !u!223 &1165780853
 Canvas:
   m_ObjectHideFlags: 0
@@ -918,12 +904,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1779313536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7decf134233fe4468fe3d0d957d2b5c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f4fa7f3a8de2b48801fd7d19e05e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 0
+  timeValue: 90
   timerText: {fileID: 755695846}
   timeUp: {fileID: 1779313542}
+  answer: {fileID: 2100749281}
+  spaceships: []
 --- !u!223 &1779313538
 Canvas:
   m_ObjectHideFlags: 0
@@ -1200,7 +1188,7 @@ GameObject:
   - component: {fileID: 2100749279}
   - component: {fileID: 2100749278}
   - component: {fileID: 2100749277}
-  - component: {fileID: 2100749276}
+  - component: {fileID: 2100749284}
   m_Layer: 5
   m_Name: Answered
   m_TagString: Answer
@@ -1208,21 +1196,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2100749276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100749275}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7decf134233fe4468fe3d0d957d2b5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeValue: 20
-  timerText: {fileID: 0}
-  timeUp: {fileID: 0}
 --- !u!223 &2100749277
 Canvas:
   m_ObjectHideFlags: 0
@@ -1484,3 +1457,20 @@ RectTransform:
   m_AnchoredPosition: {x: -0.26, y: -1.74}
   m_SizeDelta: {x: 1424.2656, y: 412.7456}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2100749284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100749275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f4fa7f3a8de2b48801fd7d19e05e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeValue: 90
+  timerText: {fileID: 755695846}
+  timeUp: {fileID: 1779313542}
+  answer: {fileID: 2100749281}
+  spaceships: []
