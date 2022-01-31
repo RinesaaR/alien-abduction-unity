@@ -12,7 +12,6 @@ public class SpaceshipAndAlien : MonoBehaviour
    
     public GameObject alien;
     public GameObject spaceship;
-    public GameObject alienOption;
 
     private string dbName = "URI=file:alienAbduction.db";
 
@@ -51,18 +50,20 @@ public class SpaceshipAndAlien : MonoBehaviour
 
             using (var command = connection.CreateCommand())
             {
+               /* int countQuestions = 0;
+                command.CommandText = "SELECT COUNT QuestionText FROM Questions WHERE QuiziId = \"00ea167e-a0bd-4889-81fa-433119531680\"";
+                command.ExecuteNonQuery();
+                countQuestions = Int32.Parse(command.CommandText);*/
                 command.CommandText = "SELECT QuestionText FROM Questions WHERE QuiziId = \"00ea167e-a0bd-4889-81fa-433119531680\"";
 
                 using (IDataReader reader = command.ExecuteReader())
                 {
-                    int i = -1;
                     while (reader.Read())
                     {
-                        GameObject spaceshipClone = Instantiate(spaceship, new Vector3(5*i, spaceship.transform.position.y, 0), spaceship.transform.rotation);
-                        spaceshipClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
+                        GameObject spaceshipClone = Instantiate(spaceship, new Vector3(UnityEngine.Random.Range(-9, 6), spaceship.transform.position.y * UnityEngine.Random.Range(1, 1.5f), 0), spaceship.transform.rotation);
+                        spaceshipClone.transform.localScale = new Vector3(1f, 1.1f, 1.5f);
                         Text question = Component.FindObjectOfType<Text>();
                         question.text += reader["QuestionText"];
-                        i++;
                     }
                 }
             }
@@ -78,18 +79,21 @@ public class SpaceshipAndAlien : MonoBehaviour
 
             using (var command = connection.CreateCommand())
             {
+                /* int countQuestions = 0;
+                 command.CommandText = "SELECT COUNT QuestionText FROM Questions WHERE QuiziId = \"00ea167e-a0bd-4889-81fa-433119531680\"";
+                 command.ExecuteNonQuery();
+                 countQuestions = Int32.Parse(command.CommandText);*/
                 command.CommandText = "SELECT Answer FROM Questions WHERE QuiziId = \"00ea167e-a0bd-4889-81fa-433119531680\"";
 
                 using (IDataReader reader = command.ExecuteReader())
                 {
-                    int i = -1;
                     while (reader.Read())
                     {
-                        GameObject alienClone = Instantiate(alien, new Vector3(4 * i - 2, alien.transform.position.y, 0), alien.transform.rotation);
+                        /*Debug.Log("HELLO");*/
+                        GameObject alienClone = Instantiate(alien, new Vector3(UnityEngine.Random.Range(-9, 6), alien.transform.position.y, 0), alien.transform.rotation);
                         alienClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
                         Text answer = Component.FindObjectOfType<Text>();
                         answer.text += reader["Answer"];
-                        i++;
                     }
                 }
             }
@@ -104,18 +108,21 @@ public class SpaceshipAndAlien : MonoBehaviour
 
             using (var command = connection.CreateCommand())
             {
+                /* int countQuestions = 0;
+                 command.CommandText = "SELECT COUNT QuestionText FROM Questions WHERE QuiziId = \"00ea167e-a0bd-4889-81fa-433119531680\"";
+                 command.ExecuteNonQuery();
+                 countQuestions = Int32.Parse(command.CommandText);*/
                 command.CommandText = "SELECT Option FROM Questions WHERE QuiziId = \"00ea167e-a0bd-4889-81fa-433119531680\"";
 
                 using (IDataReader reader = command.ExecuteReader())
                 {
-                    int i = -1;
                     while (reader.Read())
                     {
-                        GameObject alienOptionClone = Instantiate(alienOption, new Vector3(4 * i, alienOption.transform.position.y, 0), alienOption.transform.rotation);
-                        alienOptionClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
-                        Text option = Component.FindObjectOfType<Text>();
-                        option.text += reader["Option"];
-                        i++;
+                        /*Debug.Log("HELLO");*/
+                        GameObject alienClone = Instantiate(alien, new Vector3(alien.transform.position.x-3, alien.transform.position.y, 0), alien.transform.rotation);
+                        alienClone.transform.localScale = new Vector3(0.6f, 0.7f, 1.1f);
+                        Text answer = Component.FindObjectOfType<Text>();
+                        answer.text += reader["Option"];
                     }
                 }
             }
