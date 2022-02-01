@@ -242,8 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeValue: 90
   timerText: {fileID: 755695846}
-  timeUp: {fileID: 1779313542}
-  answer: {fileID: 2100749281}
+  comment: {fileID: 1779313542}
   spaceships: []
 --- !u!223 &755695842
 Canvas:
@@ -909,8 +908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeValue: 90
   timerText: {fileID: 755695846}
-  timeUp: {fileID: 1779313542}
-  answer: {fileID: 2100749281}
+  comment: {fileID: 1779313542}
   spaceships: []
 --- !u!223 &1779313538
 Canvas:
@@ -1170,8 +1168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.26, y: -1.6}
-  m_SizeDelta: {x: 549.7697, y: 412.7456}
+  m_AnchoredPosition: {x: -0.26, y: -1.64}
+  m_SizeDelta: {x: 1758.0391, y: 412.7456}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2100749275
 GameObject:
@@ -1195,7 +1193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &2100749277
 Canvas:
   m_ObjectHideFlags: 0
@@ -1471,6 +1469,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeValue: 90
   timerText: {fileID: 755695846}
-  timeUp: {fileID: 1779313542}
-  answer: {fileID: 2100749281}
+  comment: {fileID: 0}
   spaceships: []

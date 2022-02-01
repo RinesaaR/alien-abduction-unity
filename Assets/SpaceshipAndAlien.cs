@@ -25,6 +25,7 @@ public class SpaceshipAndAlien : MonoBehaviour
         DisplayQuestion();
         DisplayAnswer();
         DisplayOptions();
+        DisplayTimer();
     }
 
     public void CreateDB()
@@ -35,7 +36,8 @@ public class SpaceshipAndAlien : MonoBehaviour
 
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "CREATE TABLE IF NOT EXISTS Questions (Id VARCHAR(30), QuestionText VARCHAR(200), Answer VARCHAR(50), Option VARCHAR(50), QuiziId VARCHAR(30))";
+                command.CommandText = "CREATE TABLE IF NOT EXISTS Questions (Id VARCHAR(30), QuestionText VARCHAR(200), Answer VARCHAR(50), Option VARCHAR(50), FOREIGN KEY (QuiziID) REFERENCES Quiz(Id))";
+                command.CommandText = "CREATE TABLE IF NOT EXISTS Quizzes (Id VARCHAR(30), QuizName VARCHAR(50), Timer INT, Owner VARCHAR(20))";
 
                 command.ExecuteNonQuery();
             }
@@ -116,6 +118,28 @@ public class SpaceshipAndAlien : MonoBehaviour
                         Text option = Component.FindObjectOfType<Text>();
                         option.text += reader["Option"];
                         i++;
+                    }
+                }
+            }
+            connection.Close();
+        }
+    }
+
+    public void DisplayTimer()
+    {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT Timer FROM Quizzes WHERE Id = \"00EA167E-A0BD-4889-81FA-433119531680\"";
+                
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Int32.Parse(reader["Timer"].ToString());
                     }
                 }
             }
