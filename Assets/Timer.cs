@@ -59,14 +59,14 @@ public class Timer : MonoBehaviour
         if (Mathf.Approximately(minutes, 0) && seconds <= 0 && spaceshipNum > 1)
         {
             SceneManager.LoadScene("GameOver");
-            comment.text = "Time's up!";
+            /*comment.text = "Time's up!";*/
             timeToDisplay = 0;
             Debug.Log("go");
         }
         else if (spaceshipNum <= 1)
         {
             SceneManager.LoadScene("GameOver");
-            comment.text = "All Questions Answered!";
+            /*comment.text = "All Questions Answered!";*/
             timeToDisplay = 0;
         }
         
@@ -93,7 +93,7 @@ public class Timer : MonoBehaviour
                 }
             }
             connection.Close();
-            return 0;
+            return timeValue;
         }
     }
 }

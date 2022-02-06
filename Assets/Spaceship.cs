@@ -11,8 +11,8 @@ public class Spaceship : MonoBehaviour
     private float PlayerSpeed = 5;
     private Alien[] _aliens;
     private Alien chosenAlien = null;
-    private Rigidbody2D rb;
-    [SerializeField] Vector3 force;
+    /*private Rigidbody2D rb;
+    [SerializeField] Vector3 force;*/
     /*int countCorrect = 0;*/
     private void Awake()
     {

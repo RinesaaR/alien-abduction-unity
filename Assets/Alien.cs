@@ -9,12 +9,12 @@ public class Alien : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private Spaceship[] _spaceships;
+/*    private Spaceship[] _spaceships;
 
     private void OnEnable()
     {
         _spaceships = FindObjectsOfType<Spaceship>();
-    }
+    }*/
 
 
     private void OnTriggerEnter2D(Collider2D collision)
